@@ -29,22 +29,22 @@ readStream.on('error', (error) => {
   console.error(error);
 });
 
-// 최종판 간추린 방법
+// 최종판 간추린 방법(아래)
 
-// fs.createReadStream('./file.txt', {
-//   // highWaterMark: 64000, // default는 64kbyte 버퍼 사이즈를 결정한다. 스트림을 한번에 처리할 수 있는 크기를 결정한다.
-//   // encoding: 'utf-8',
-// })
-//   .on('data', (chunk) => {
-//     // console.log(chunk);
-//     data.push(chunk);
-//     console.count('data');
-//   })
-//   .on('end', () => {
-//     console.log(data.join(''));
-//   })
-//   .on('error', (error) => {
-//     console.error(error);
-//   });
-// //ctrl+클릭을 보면 this 자기자신을 return하기 때문에
-// // 이렇게 .on 으로 chaining을 통해 코드를 간추려 줄수 있다.
+fs.createReadStream('./file.txt', {
+  // highWaterMark: 64000, // default는 64kbyte 버퍼 사이즈를 결정한다. 스트림을 한번에 처리할 수 있는 크기를 결정한다.
+  // encoding: 'utf-8',
+})
+  .on('data', (chunk) => {
+    // console.log(chunk);
+    data.push(chunk);
+    console.count('data');
+  })
+  .on('end', () => {
+    console.log(data.join(''));
+  })
+  .on('error', (error) => {
+    console.error(error);
+  });
+//ctrl+클릭을 보면 this 자기자신을 return하기 때문에
+// 이렇게 .on 으로 chaining을 통해 코드를 간추려 줄수 있다.

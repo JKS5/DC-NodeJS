@@ -4,7 +4,7 @@
 // package.json에 "type":"module"(Node JS말고 JS자체 모듈) 설정해서 ES6문법 사용하자.
 let count = 0;
 
-// 간단히 export 사용
+// es6 부터는 간단히 export 사용
 export function increase() {
   count++;
 }
