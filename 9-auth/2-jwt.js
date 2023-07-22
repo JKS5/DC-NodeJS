@@ -15,3 +15,4 @@ setTimeout(() => {
     console.log(error, decode);
   });
 }, 3000);
+console.log(token);
